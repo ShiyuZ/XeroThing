@@ -1,0 +1,31 @@
+<html>
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-aria.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-animate.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-messages.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-animate.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.8/angular-material.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.8/angular-material.css" />
+        <script src="js/app.js"></script>
+        <script src="home/home.js"></script>
+		<link rel="stylesheet" href="css/site.css" />
+    </head>
+    <body ng-app="app">
+		<div layout="column">
+			<div style="color:white;font-face:NationalLight" layout="row" layout-align="center center">
+				<img src="/images/xero-white.png" style="height:60px;">
+				<span>Xero Chow Chum</span>
+			</div>
+			<div layout="row">
+			    <div style="width:100%" ng-view class="main-panel">
+
+			    </div>
+			</div>
+		</div>
+    </body>
+</html>

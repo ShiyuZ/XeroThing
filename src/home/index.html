@@ -1,0 +1,72 @@
+<div layout="column" layout-align="top center" style="width:100%">
+	<md-content class="fade" layout="column" layout-align="center center" class="md-primary" ng-show="isSelectingOffice">
+		<md-input-container style="margin-bottom:0px;padding-bottom:0px;">
+			<input placeholder="Enter your name here" required ng-model="name"/>
+		</md-input-container>
+	</md-content>
+
+	<md-content class="fade" layout="column" layout-align="start center" class="md-primary" ng-show="isSelectingOffice">
+		<p>What do you feel like eating?</p>
+		<div layout="row" layout-wrap>
+			<div flex="50" ng-repeat="food in foods" layout="row" layout-align="start start">
+				<div flex="25"></div>
+				<md-checkbox ng-model="food.selected" />
+
+					<div layout="column" layout-align="center center">
+						<img ng-src="/images/{{food.image}}" height="30px" style="color:white;" />
+						<span>{{food.name}}</span>
+					</div>
+				</md-checkbox>
+				<!--
+				<div style="height:100px;background-color:blue;" ng-click="goToWaitingScreen(food)">
+					<div layout="column" layout-align="center center">
+						<span>Picture</span>
+						<span>{{food}}</span>
+					</div>
+
+				</div>
+	-->
+			</div>
+		</div>
+
+	</md-content>
+
+	<md-content layout="column" layout-align="start center" ng-show="isSelectingOffice">
+		<p>Now, select your office</p>
+		<div layout="row" layout-wrap>
+<!--
+			<div flex="50" ng-repeat="office in offices" layout="column" layout-align="center center">
+				<md-button class="md-primary md-raised" style="height:100px;width:80%" ng-click="goToWaitingScreen(office)">
+					<div layout="column" layout-align="center center">
+						<img src="/images/golden-gate-bridge.svg" height="50px" />
+						<div style="word-wrap:break-word;">{{office}}</div>
+					</div>
+				</md-button>
+			</div>
+		-->
+			<md-radio-group ng-model="selectedOffice">
+		      <md-radio-button value="{{office}}" class="md-primary"
+			  ng-repeat="office in offices">{{office}}</md-radio-button>
+		    </md-radio-group>
+		</div>
+	</md-content>
+	<md-button ng-click="goToWaitingScreen()" ng-show="isSelectingOffice">Find me some food</md-button>
+
+	<md-content class="md-padding fade" layout="column" layout-align="center center" class="md-primary" ng-show="isWaitingScreen">
+		These other people in {{selectedOffice}} like food:
+		<md-content style="width:100%;">
+			<md-list>
+				<md-list-item class="md-2-line" ng-repeat="person in people">
+					<img src="/images/generic_avatar.png" class="md-avatar" />
+					<div class="md-list-item-text">
+						<h3>{{person.name}}</h3>
+						<p>blah@xero.com</p>
+					</div>
+					<md-icon ng-repeat="food in person.foods" md-svg-src="/images/{{getFoodImage(food)}}" class="s36" />
+				</md-list-item>
+			</md-list>
+		</md-content>
+		<md-button class="md-raised md-primary">Send them an email or something</md-button>
+		<md-button class="md-raised" ng-click="backToHome()">Yeah, nah</md-button>
+	</md-content>
+</div>

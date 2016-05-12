@@ -1,0 +1,17 @@
+{
+  "name": "jsly",
+  "description": "",
+  "main": "index.js",
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "dt-angular": "*"
+  }
+}

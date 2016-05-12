@@ -1,0 +1,38 @@
+.fade.ng-hide {
+  opacity: 0;
+}
+
+.fade.ng-hide-remove {
+  transition: all linear 300ms;
+}
+.fade-in.ng-hide {
+  opacity: 0;
+}
+.fade-in.ng-show {
+  opacity: 100;
+}
+
+.fade-in.ng-show-add {
+  transition: all linear 500ms;
+}
+@font-face {
+    font-family: NationalLight;
+    src:
+        url('/images/national-light.woff2') format('woff2');
+}
+h2 {
+	font-family: 'NationalLight', Roboto-light;
+}
+body {
+	background-color: #2BAAED;
+}
+.main-panel {
+	background-color:white;
+}
+.md-errors-spacer {
+	display:none;
+}
+md-checkbox {
+	margin-bottom:0px;
+	padding-bottom:0px;
+}
